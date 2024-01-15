@@ -1,6 +1,6 @@
 import { act } from "@testing-library/react";
 import { ApplicationContext } from "../../stores/store/ApplicationStore";
-import useStore from "./UseStore";
+import useApplicationStore from "./UseApplicationStore";
 import { renderHook } from "@testing-library/react";
 import { defaultApplicationState } from "../../stores/state/ApplicationState";
 import { ReactNode, useReducer } from "react";
@@ -30,7 +30,9 @@ interface StoreWrapperProperties {
 
 describe("UseStore", () => {
   it("has correct state", () => {
-    const { result } = renderHook(() => useStore(), { wrapper: StoreWrapper });
+    const { result } = renderHook(() => useApplicationStore(), {
+      wrapper: StoreWrapper,
+    });
 
     act(() => {
       const [state] = result.current;

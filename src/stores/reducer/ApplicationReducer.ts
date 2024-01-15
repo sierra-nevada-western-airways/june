@@ -1,5 +1,5 @@
-import { Action } from "../actions/Action";
-import IAction from "../actions/IAction";
+import { ApplicationAction } from "../actions/common/ApplicationAction";
+import IAction from "../actions/common/IAction";
 import {
   ApplicationState,
   defaultApplicationState,
@@ -10,10 +10,10 @@ export default function applicationReducer(
   action: IAction,
 ): ApplicationState {
   switch (action.action) {
-    case Action.LogIn: {
+    case ApplicationAction.LogIn: {
       return state;
     }
-    case Action.LogOut: {
+    case ApplicationAction.LogOut: {
       return defaultApplicationState();
     }
     default: {

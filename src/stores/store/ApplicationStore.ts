@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import IAction from "../actions/IAction";
+import IAction from "../actions/common/IAction";
 import {
   ApplicationState,
   defaultApplicationState,
