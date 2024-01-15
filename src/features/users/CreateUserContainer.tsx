@@ -4,9 +4,11 @@ import CreateUser from "./CreateUser";
 
 const CreateUserContainer: React.FC = () => {
   const createUser = async (request: CreateUserRequest): Promise<void> => {
-    apiClient()
+    return apiClient()
       .user.createUser(request)
-      .then((response) => {});
+      .then((response) => {
+        return;
+      });
   };
 
   return <CreateUser createUser={createUser} />;

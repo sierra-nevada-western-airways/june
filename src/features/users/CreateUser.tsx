@@ -8,13 +8,13 @@ const CreateUser: React.FC<CreateUserProperties> = ({ createUser }) => {
   const email = useTextInput();
   const password = useTextInput();
 
-  const handleOnSubmit = async (
-    event: React.FormEvent<HTMLFormElement>,
-  ): Promise<void> => {
-    await createUser({
+  const handleOnSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    void createUser({
       userName: userName.value,
       email: email.value,
       password: password.value,
+    }).then(() => {
+      return;
     });
 
     event.preventDefault();
