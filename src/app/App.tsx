@@ -1,11 +1,26 @@
-import CreateUserContainer from "../features/users/CreateUserContainer";
+import { Outlet } from "react-router-dom";
+import useCreateStore from "../hooks/use-create-store/UseCreateStore";
+import {
+  ApplicationContext,
+  applicationReducer,
+  defaultApplicationState,
+} from "../stores";
 
 const App: React.FC = () => {
+  const store = useCreateStore(defaultApplicationState(), applicationReducer);
+
   return (
-    <main>
-      <div>Hello, I'm Sierra Nevada Western Airways!</div>
-      <CreateUserContainer />
-    </main>
+    <ApplicationContext.Provider value={store}>
+      <header>
+        <nav>
+          <h1>Sierra Nevada Western Airways</h1>
+        </nav>
+      </header>
+      <main>
+        <Outlet />
+      </main>
+      <footer></footer>
+    </ApplicationContext.Provider>
   );
 };
 
