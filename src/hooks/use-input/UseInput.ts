@@ -5,22 +5,22 @@ import { InputType } from "./InputType";
 
 export function useInput<TInputType extends InputType>(
   initial: TInputType,
-  mappingFunc: (element: HTMLInputElement) => TInputType,
-  validationFunc?: (value: TInputType) => IValidationResult,
+  mappingFunction: (element: HTMLInputElement) => TInputType,
+  validationFunction?: (value: TInputType) => IValidationResult,
 ): IUseInput<TInputType> {
   const [value, updateValue] = useState<TInputType>(initial);
-  const [valid, setValid] = useState<boolean>(false);
+  const [isValid, setValid] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
-  const [dirty, setDirty] = useState<boolean>(false);
+  const [isDirty, setDirty] = useState<boolean>(false);
 
   const setValue = (event: React.FormEvent<HTMLInputElement>): void => {
     const element = event.target as HTMLInputElement;
-    const value = mappingFunc(element);
+    const value = mappingFunction(element);
     updateValue(value);
     setDirty(true);
 
-    if (validationFunc) {
-      const result = validationFunc(value);
+    if (validationFunction) {
+      const result = validationFunction(value);
       setValid(element.validity.valid && result.valid);
       setError(result.error === "" ? element.validationMessage : result.error);
     } else {
@@ -37,9 +37,9 @@ export function useInput<TInputType extends InputType>(
   return {
     value,
     setValue,
-    valid,
+    isValid,
     setValidationResult,
     error,
-    dirty,
+    isDirty,
   };
 }

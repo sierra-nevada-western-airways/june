@@ -6,5 +6,5 @@ export interface IUseInput<TInputType> extends IValid {
   setValue: (event: React.FormEvent<HTMLInputElement>) => void;
   error: string;
   setValidationResult: (result: IValidationResult) => void;
-  dirty: boolean;
+  isDirty: boolean;
 }

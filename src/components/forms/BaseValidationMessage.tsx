@@ -14,10 +14,11 @@ export const BaseValidationMessage: React.FC<
         successClass,
       )}
       style={{
-        visibility: useInput.valid || !useInput.dirty ? "hidden" : "visible",
+        visibility:
+          useInput.isValid || !useInput.isDirty ? "hidden" : "visible",
       }}
     >
-      {useInput.valid || !useInput.dirty ? "valid" : useInput.error}
+      {useInput.isValid || !useInput.isDirty ? "valid" : useInput.error}
     </p>
   );
 };

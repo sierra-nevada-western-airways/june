@@ -1,3 +1,3 @@
 export default interface AccessTokenPayload {
-  UserName: string;
+  userName: string;
 }

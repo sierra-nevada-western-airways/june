@@ -1,6 +1,6 @@
-src/registerServiceWorker.js
-jest.config.js
-src/setupTests.ts
-src/serviceWorker.ts
-./src/serviceWorker.ts
 src/reportWebVitals.ts
+cypress.config.ts
+src/react-app-env.d.ts
+src/setupTests.ts
+src/reportWebVitals.ts
+src/data/Api.ts

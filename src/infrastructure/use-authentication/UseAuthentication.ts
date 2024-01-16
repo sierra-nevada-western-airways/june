@@ -30,7 +30,7 @@ export default function useAuthentication(): IUseAuthorization {
 
         localStorage.saveRefreshToken(response.data.refreshToken);
 
-        dispatcher(logInAction(payload.UserName, response.data.bearerToken));
+        dispatcher(logInAction(payload.userName, response.data.bearerToken));
       }
       return navigate("");
     } catch {

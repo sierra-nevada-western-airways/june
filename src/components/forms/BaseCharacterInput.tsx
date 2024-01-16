@@ -22,9 +22,9 @@ export const BaseCharacterInput: React.FC<BaseCharacterInputProperties> = ({
       )}
       id={id}
       placeholder={placeholder}
-      onChange={useInput.setValue}
-      onFocus={useInput.setValue}
-      onInput={useInput.setValue}
+      onChange={(event): void => useInput.setValue(event)}
+      onFocus={(event): void => useInput.setValue(event)}
+      onInput={(event): void => useInput.setValue(event)}
       required={required}
       type={type}
       value={getValue(type, useInput)}

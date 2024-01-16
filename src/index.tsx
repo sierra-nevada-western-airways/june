@@ -7,7 +7,7 @@ import { appRoutes } from "./app/App.routes";
 import { homeRoutes } from "./features/home/Home.routes";
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") ?? new Element(),
+  document.querySelector("#root") ?? new Element(),
 );
 
 const router = createBrowserRouter([appRoutes([homeRoutes()])]);

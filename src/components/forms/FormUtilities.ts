@@ -7,9 +7,15 @@ export function getValue(
 ): string {
   switch (inputType) {
     case "text":
+    case "number": {
       return useInput.value.toString();
-    default:
+    }
+    case "date": {
+      return new Date(useInput.value).toISOString();
+    }
+    default: {
       return useInput.value.toString();
+    }
   }
 }
 
@@ -21,12 +27,8 @@ export function determineStyleClass(
 ): string {
   let result = constant ?? "";
 
-  if (useInput.dirty) {
-    if (useInput.valid) {
-      result += ` ${success ?? ""}`;
-    } else {
-      result += ` ${error ?? ""}`;
-    }
+  if (useInput.isDirty) {
+    result += useInput.isValid ? ` ${success ?? ""}` : ` ${error ?? ""}`;
   }
 
   return result;
