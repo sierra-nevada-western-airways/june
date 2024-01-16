@@ -9,6 +9,10 @@ const CreateUser: React.FC<CreateUserProperties> = ({ createUser }) => {
   const email = useTextInput();
   const password = useTextInput();
 
+  const myFunction = () => {
+    return;
+  };
+
   const handleOnSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     void createUser({
       userName: userName.value,
