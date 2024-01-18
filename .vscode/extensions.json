@@ -8,6 +8,8 @@
     "eamodio.gitlens",
     "streetsidesoftware.code-spell-checker",
     "editorconfig.editorconfig",
-    "ms-azuretools.vscode-azureappservice"
+    "ms-azuretools.vscode-azureappservice",
+    "orta.vscode-jest",
+    "webben.browserslist"
   ]
 }
